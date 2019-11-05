@@ -1,0 +1,32 @@
+<!--index.wxml-->
+<view class="container">
+  <view style="width:100%;">
+    <view class="userinfo">
+      <block>
+        <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+        <image  class="point-right" src="/icon/pointright.png"></image>
+      </block>
+    </view>
+    <view class="entry-box">
+      <image class="img-mark" src="/icon/address.png"></image>
+      <text class="font-desc">收货地址</text>
+      <image  class="point-right-desc" src="/icon/pointright.png"></image>
+    </view>
+    <view class="entry-box">
+      <image class="img-mark" src="/icon/address.png"></image>
+      <text class="font-desc">优惠券</text>
+      <image  class="point-right-desc" src="/icon/pointright.png"></image>
+    </view>
+    <view class="entry-box">
+      <image class="img-mark" src="/icon/address.png"></image>
+      <text class="font-desc">分享给朋友</text>
+      <image  class="point-right-desc" src="/icon/pointright.png"></image>
+    </view>
+    <view class="entry-box">
+      <image class="img-mark" src="/icon/address.png"></image>
+      <text class="font-desc">客户服务</text>
+      <image  class="point-right-desc" src="/icon/pointright.png"></image>
+    </view>
+  </view>
+</view>

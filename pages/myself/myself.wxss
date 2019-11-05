@@ -1,0 +1,46 @@
+/**index.wxss**/
+.userinfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+}
+
+.userinfo-avatar {
+  width: 100rpx;
+  height: 100rpx;
+  margin: 60rpx 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #000;
+  font-size: 38rpx;
+}
+.point-right{
+  width: 30rpx;
+  height:30rpx;
+  margin-top:0rpx;
+  position: absolute;
+  right: 30rpx;
+}
+.entry-box{
+  height: 50rpx;
+  padding: 20rpx;
+}
+.img-mark{
+  width: 50rpx;
+  height: 50rpx;
+  vertical-align: top;
+}
+.font-desc{
+  font-size: 30rpx;
+  margin-left: 20rpx;
+}
+.point-right-desc{
+  width: 30rpx;
+  height:30rpx;
+  margin-top:10rpx;
+  position: absolute;
+  right: 30rpx;
+}

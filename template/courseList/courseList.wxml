@@ -1,0 +1,49 @@
+<template name="goodsList">
+    <block wx:if = "{{true}}">
+    <navigator class="goodsList" hover-class="none" url="../goodsDetails/goodsDetails?id={{id}}&sourceType={{sourceType}}&sourceId={{sourceId}}">
+        <view class="goods">
+            <view class="goodsImgBox">
+                <image class="goodsImg" src="{{picUrl}}?x-oss-process=image/resize,w_200/" lazy-load="true"></image>
+                <image class="goodsNot" wx:if="{{quantity<1}}" src="http://image.domolife.cn/wechatIcon/goods_sold_out.png"></image>
+            </view>
+            <view class="goodsText">
+                <view class="goodsTitle">
+                    <!-- <view class="activityTagBox" wx:if="{{activityTag||marketLabelList.length>0}}">
+                        <view class="activityTag" wx:if="{{activityTag}}">{{activityTag}}</view>
+                        <view class="labelTag" wx:if="{{marketLabelList.length>0}}" wx:for="{{marketLabelList}}" wx:key="index" wx:for-item="label">
+                            <text>{{label.title}}</text>
+                        </view>
+                    </view> -->
+                    <view class="goodsName">{{subtitle}}</view>
+                </view>
+                <view class="goodsSubTitle">{{name?name:title}}</view>
+                <view class="price_goods">￥{{price}}</view>
+            </view>
+        </view>
+    </navigator>
+    </block>
+
+    <block wx:else>
+      <navigator class="goodsList" hover-class="none" url="../goodsDetails/goodsDetails?id={{id}}">
+          <view class="goods">
+              <view class="goodsImgBox">
+                  <image class="goodsImg" src="{{picUrl?picUrl:path}}?x-oss-process=image/resize,w_200/" lazy-load="true"></image>
+                  <image class="goodsNot" wx:if="{{quantity<1}}" src="http://image.domolife.cn/wechatIcon/goods_sold_out.png"></image>
+              </view>
+              <view class="goodsText">
+                  <view class="goodsTitle">
+                      <view class="activityTagBox" wx:if="{{activityTag||marketLabelList.length>0}}">
+                          <view class="activityTag" wx:if="{{activityTag}}">{{activityTag}}</view>
+                          <view class="labelTag" wx:if="{{marketLabelList.length>0}}" wx:for="{{marketLabelList}}" wx:key="index" wx:for-item="label">
+                              <text>{{label.title}}</text>
+                          </view>
+                      </view>
+                      <view class="goodsName">{{subtitle}}</view>
+                  </view>
+                  <view class="goodsSubTitle">{{name?name:title}}</view>
+                  <view class="price_goods">￥{{price}}</view>
+              </view>
+          </view>
+      </navigator>
+    </block>
+</template>

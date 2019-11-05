@@ -1,0 +1,19 @@
+<!--index.wxml-->
+<view class="container" style="height:100%;">
+  <view style="width: 100%;height:100%;">
+    <block wx:if="{{orderList.length!=0}}">
+      <view class="bg_black"></view>
+    </block>
+    <block wx:else>
+        <view class="empty-box">
+          <image class="empty-box-img" src="/icon/emptyshopcart.png"></image>
+          <view class="empty-box-font">
+            <text>您的购物车有的寂寞</text>
+          </view>
+          <view class="empty-box-btn">
+            <text>去挑商品</text>
+          </view>
+        </view>
+    </block>
+  </view>
+</view>
