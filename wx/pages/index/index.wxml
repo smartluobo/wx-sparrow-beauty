@@ -1,0 +1,69 @@
+<!--index.wxml-->
+<import src="../../template/courseList/courseList.wxml"/>
+<view class="container">
+  <view class="page-body">
+    <view class="page-section-spacing swiper">
+      <swiper class="swiper" indicator-color="rgba(255,255,255,0.8)" indicator-active-color="rgba(250,250,250,1)"
+        indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" vertical="{{vertical}}"
+        interval="{{interval}}" duration="{{duration}}" previous-margin="{{previousMargin}}px" next-margin="{{nextMargin}}px"> 
+        <block wx:for="{{background}}" wx:key="*this">
+          <swiper-item>
+            <view class="swiper-item">
+              <image class="swiper-img" src="{{item}}"/>
+            </view>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    <view class="page-section-title" >
+       <view class="nav_list" bindtap="getActivityInfo">
+        <view><image src="/image/sign-in.png"/></view>
+        <text>每日签到</text>
+      </view>
+      <view class="nav_list"  bindtap="goCouponList">
+        <view><image src="/image/discount-coupon.png"/></view>
+        <text>优惠劵</text>
+      </view>
+      <view class="nav_list" bindtap="recharge">
+        <view><image src="/image/credits-exchange.png"/></view>
+        <text>积分兑换</text>
+      </view>
+      <view class="nav_list" bindtap="tea">
+        <view><image src="/image/purchase-diary.png"/></view>
+        <text>购买日记</text>
+      </view>
+      <view class="nav_list" bindtap="store">
+        <view><image src="/image/join-us.png"/></view>
+        <text>加入我们</text>
+      </view>
+    </view>
+    
+    <view class="content_banner">
+      <view class="content_banner_left" bindtap="new">
+        <image src="/image/new-gift.png"></image>
+      </view>
+      <view class="content_banner_right" bindtap="share">
+        <image src="/image/share.png"></image>
+      </view>
+    </view>
+
+    <view class="title-font">
+      <image class="title-font-img" src="/image/single-item.png" />
+    </view>
+
+    <view class="goods-block">
+      <!-- <block wx:for="{{goodsList}}" wx:key="$this">
+          <view class="goods-box">
+            <image bindtap="goDetail"  class="swiper-img" src="{{item.img}}" />
+          </view>
+      </block> -->
+      <block wx:for="{{goodsList}}"  wx:key="{{index}}">
+              <template is="goodsList" data="{{...item}}"></template>
+      </block>
+    </view>
+    
+    
+    
+  </view>
+  
+</view>

@@ -1,0 +1,42 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/goodsDetails/goodsDetails",
+    "pages/shopcart/shopcart",
+    "pages/myself/myself"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "美雀姿",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "color": "#2c2c2c",
+    "selectedColor": "#d81e06",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "icon/index.png",
+        "selectedIconPath": "icon/index-selected.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/shopcart/shopcart",
+        "iconPath": "icon/shop-cart.png",
+        "selectedIconPath": "icon/shop-cart-selected.png",
+        "text": "购物车"
+      },
+      {
+        "pagePath": "pages/myself/myself",
+        "iconPath": "icon/mine.png",
+        "selectedIconPath": "icon/mine-selected.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}
