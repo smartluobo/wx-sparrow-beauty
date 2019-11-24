@@ -1,2 +1,0 @@
-# wx-sparrow-beauty
-js
