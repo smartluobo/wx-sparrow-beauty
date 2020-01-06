@@ -1,0 +1,22 @@
+<!--Components/cycleView/cycleView.wxml-->
+<view class='{{viewShape}}'>
+    <swiper wx:if="{{viewType=='banner'}}" class="innerView" indicator-active-color="#ff5e6b" indicator-color="#FFAFB5" indicator-dots="true" autoplay="true" interval="3000" duration="600" circular="true" >
+        <block wx:for="{{bannerArray}}" wx:key="{{index}}" wx:for-item="item">
+            <swiper-item> 
+                <image src="{{item.picUrl}}" mode="aspectFit" class="innerView" data-id="{{item.id}}" bindtap="picTap" data-link="{{item.wxLink}}" />
+            </swiper-item>
+        </block>
+        
+    </swiper>
+
+    <swiper wx:if="{{viewType=='goods'}}" class="innerView" indicator-active-color="#ff5e6b" indicator-color="#FFAFB5" indicator-dots="true" autoplay="true" interval="3000" duration="600" circular="true" >
+        <block wx:for="{{picUrls}}" wx:key="{{index}}" wx:for-item="url">
+            <swiper-item> 
+                <image src="{{url}}" mode="aspectFill" class="innerView"/>
+            </swiper-item>
+        </block>
+    </swiper>
+
+    <slot></slot>
+
+</view>

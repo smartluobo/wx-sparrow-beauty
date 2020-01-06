@@ -1,0 +1,14 @@
+<view class="share" bindtap="goHome">首 页</view>
+<view>
+  <view class="content">
+    <image class="logo" src="../../image/duomolife_logo.png" />
+    <!-- <view class="logoText">多么生活</view> -->
+  </view>
+  <button class="register" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo"></button>
+  <view class="agreement">
+    <text>授权即表示同意</text>
+    <navigator url="../signProtocol/signProtocol?type=register">《多么生活用户注册协议》</navigator>
+    <text>和</text>
+    <navigator url="../signProtocol/signProtocol?type=privacy">《多么生活用户隐私政策》</navigator>
+  </view>
+</view>

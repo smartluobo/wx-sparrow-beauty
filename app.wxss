@@ -17,3 +17,150 @@
     display: inline-block;
     vertical-align: top;
   }
+  /**app.wxss**/
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.more {
+    width: 100%;
+    height: 68rpx;
+    text-align: center;
+    line-height: 68rpx;
+    background-color: #f5f5f5;
+    border-top: 1rpx solid #e6e6e6;
+    display: block;
+}
+
+.more_text {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 22rpx;
+    color: #999;
+}
+
+.more i {
+    display: inline-block;
+    vertical-align: top;
+    height: 68rpx;
+    margin-right: 16rpx;
+}
+
+.more_over {
+    background: url(http://image.domolife.cn/wechatIcon/low_2x.png) no-repeat center;
+    background-size: 36rpx 27rpx;
+    width: 36rpx;
+}
+
+.more_load {
+    background: url("http://image.domolife.cn/wechatIcon/load_flower.gif") no-repeat center;
+    background-size: 36rpx 36rpx;
+    width: 36rpx;
+}
+
+button {
+    position: relative;
+    display: block;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+    box-sizing: border-box;
+    text-align: center;
+    text-decoration: none;
+    background: rgba(0, 0, 0, 0);
+}
+
+button::after {
+    border: none;
+}
+
+.error {
+    width: 750rpx;
+    height: 800rpx;
+    text-align: center;
+    vertical-align: middle;
+    display: table-cell;
+}
+
+.error view {
+    display: inline-block;
+    width: 90px;
+    height: 90px;
+    background: url("http://image.domolife.cn/platform/6wehGDnxzs1523960807102.png") no-repeat center;
+    background-size: 90px 90px;
+}
+
+.error text {
+    display: block;
+    font-size: 16px;
+    color: #666;
+    line-height: 80px;
+}
+
+.screen {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #000;
+    opacity: 0.5;
+    overflow: hidden;
+    z-index: 1000;
+    color: #fff;
+}
+
+.attr_box {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 2000;
+}
+
+.new {
+    text-align: center;
+    width: 104rpx;
+    height: 60rpx;
+    position: absolute;
+    top: 0;
+    left: 20rpx;
+    color: #fff;
+    line-height: 60rpx;
+    font-size: 28rpx;
+    background: url(http://image.domolife.cn/wechatIcon/gp_label-detail@2x.png) no-repeat center;
+    background-size: 100rpx 60rpx;
+}
+
+.navigator-hover {
+    opacity: 1;
+}
+.not-data-txt {
+  font-size: 28rpx;
+  color: #666;
+  text-align: center;
+  margin: 24rpx 0;
+}
+
+
+.share {
+    width: 100rpx;
+    height: 46rpx;
+    background: #ff8593;
+    color: #fff;
+    border-top-left-radius: 23rpx;
+    border-bottom-left-radius: 23rpx;
+    font-size: 26rpx;
+    text-align: center;
+    line-height: 46rpx;
+    position: fixed;
+    right: 0;
+    top: 150rpx;
+    z-index: 3000;
+}

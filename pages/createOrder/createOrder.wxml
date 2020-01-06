@@ -1,0 +1,118 @@
+<view class="share" bindtap="goHome">首 页</view>
+<view class="order">
+    <view class="overseasGo" wx:if="{{order.prompt}}">
+        {{order.prompt}}
+    </view>
+    <view class="site" bindtap='selectAdd'>
+        <view class="address" wx:if="{{Address.consignee}}">
+            <view class="box">
+                <text class="username">{{Address.consignee}}</text>
+                <text class="tell">{{Address.mobile}}</text>
+            </view>
+            <text class="address_info">{{Address.address_com}}{{Address.address}}</text>
+        </view>
+        <view class="address" wx:if="{{!Address.consignee}}">
+            <view class="default_box">
+                <view class="default">请添加收货地址</view> 
+            </view>
+        </view>
+        <view class="img_box">
+            <image src="http://image.domolife.cn/wechatIcon/next.png"/>
+        </view>
+    </view>
+    <view class="identityInfo" wx:if="{{order.isOverseasGo}}">
+        <view class="userName">
+            <text>实名用户</text>
+            <input type="text" bindinput="userName" value="{{order.realName}}" placeholder="请输入用户姓名"/>
+        </view>
+        <view class="userName">
+            <text>身份证号码</text>
+            <input type="text" maxlength="18" bindinput="userIdentity" value="{{order.showIdcard}}" placeholder="请输入身份证号码"/>
+        </view>
+    </view>
+  <view class="content_b" wx:for="{{order.productInfo}}" wx:for-item="productInfo" wx:key="index"> 
+        <navigator class="activity_s" url="../activitySpecial/activitySpecial?id={{productInfo.activityInfo.activityCode}}"  wx:if="{{productInfo.activityInfo}}" >
+           <view class="activityTag2">
+                <span class="activityTagSpan">{{productInfo.activityInfo.activityTag}}</span>
+                <view class="activityBox">
+                  <span class="activityrule">{{productInfo.activityInfo.activityName}}</span>
+                </view>
+            </view>
+            <view data-id="{{productInfo.activityInfo}}" class="activityBtn"><text></text></view>
+        </navigator>
+        <view class="item_box_s" wx:for="{{productInfo.activityProductInfo}}" wx:for-item="product" wx:key="index">
+            <view class="item_box">
+                <view class="item">
+                    <view class="img_big">
+                        <image src="{{product.picUrl}}"/>
+                    </view>
+                    <view class="center">
+                        <view class="title">
+                            <text>{{product.name}}</text>
+                        </view>
+                        <view class="genre_box">
+                            <view class="genre">{{product.skuName}}</view>
+                            <view class="count">×{{product.count}}</view>
+                        </view>
+                        <view class="qian" >
+                            <!-- <text class="qian_left">活动价 ¥</text> -->
+                            <text class="qian_right">{{product.price}}</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="combinationBox" wx:for="{{product.combineProductInfo}}" wx:for-item="combine" wx:key="index">
+                <view class="combinationImg">
+                    <image src="{{combine.picUrl}}"/>
+                </view>
+                <view class="combinationContent">
+                    <view class="combinationTitle">{{combine.name}}</view>
+                    <view class="combinationMiddle">
+                        <view class="combinationSku">{{combine.skuName}}</view>
+                    </view>
+                    <view class="combinationPrice">
+                        <span class="c_price">¥{{combine.price}}</span>
+                        <span class="c_couponPrice" wx:if="{{combine.combineDecreasePrice}}">优惠了{{combine.combineDecreasePrice}}元</span>
+                    </view>
+                </view>
+            </view>
+            <view class="combinationBox" wx:for="{{product.presentProductInfo}}" wx:for-item="present" wx:key="index">
+                <view class="combinationImg">
+                    <image src="{{present.picUrl}}"/>
+                </view>
+                <view class="complimentaryText">{{present.name}}</view>
+                <view class="complimentaryCount">×{{present.count}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="item_two" id="Coupon" bindtap="goCoupon" wx:if="{{!gpInfoId}}">
+		<text>优惠券</text>
+		<view class="compile">
+			<text class="compile_txt">{{userCouponTitle}}</text>
+			<view class="icon">
+				<image src="http://image.domolife.cn/wechatIcon/next.png"/>
+			</view>
+		</view>
+    </view>
+    <view class="item_two">
+		<text>留言</text>
+		<input class="wbk" type="text" bindinput="leaveWord" placeholder="对本次交易的说明（选填）"/>
+    </view>
+    <view class="cost_list">
+        <view class="list" wx:for="{{priceInfo}}" wx:for-item="p" wx:key="index" wx:if="{{index!=priceInfo.length-1}}">
+            <text class="list_left">{{p.name}}</text>
+            <text class="list_right" style="color:{{p.color}};">{{p.totalPriceName}}</text>
+        </view>
+    </view>
+    <view class="footer">
+		<view class="footer_txt">
+			<text class="footer_txt_l">实付:</text>
+		</view>
+		<view class="price" wx:for="{{priceInfo}}"  wx:for-item="p" wx:key="index" wx:if="{{index==priceInfo.length-1}}"  >
+			<text class="nmb" >{{p.totalPriceName}}</text>
+		</view>
+		<view class="btn_box">
+			<view class="btn" data-state="{{payStatus}}" bindtap="creator" style="background: rgb(255, 94, 107);">提交订单</view>
+		</view>
+	</view>
+</view>

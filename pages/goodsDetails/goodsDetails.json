@@ -1,6 +1,6 @@
 {
   "navigationBarTitleText": "商品详情",
   "usingComponents": {
-    "cycleView": "../../Components/cycleView/cycleView"
+    "cycleView": "../../components/cycleView/cycleView"
   }
 }

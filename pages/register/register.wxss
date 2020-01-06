@@ -1,0 +1,50 @@
+button {
+    border: none;
+    height: 102rpx;
+    background: none;
+    border-radius: 0;
+    line-height: 102rpx;
+    color: #333;
+    font-size: 30rpx;
+    text-align: left;
+}
+
+button:after {
+    border: none;
+}
+
+.register {
+    width: 600rpx;
+    height: 80rpx;
+    font-size: 34rpx;
+    color: #666;
+    text-align: center;
+    background: url('http://image.domolife.cn/wechatIcon/button.png');
+    line-height: 80rpx;
+    border-radius: 20rpx;
+    margin: 0 auto;
+    margin-top: 169rpx;
+    background-size: 600rpx 80rpx;
+}
+
+.logo {
+    width: 150rpx;
+    height: 189rpx;
+    margin-top: 215rpx;
+}
+
+.content {
+    text-align: center
+}
+
+.agreement {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 24rpx;
+  font-size: 20rpx;
+  color: #333;
+}
+.agreement navigator {
+  color: #389bf8;
+}

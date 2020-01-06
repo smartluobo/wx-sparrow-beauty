@@ -52,11 +52,6 @@
     </view>
 
     <view class="goods-block">
-      <!-- <block wx:for="{{goodsList}}" wx:key="$this">
-          <view class="goods-box">
-            <image bindtap="goDetail"  class="swiper-img" src="{{item.img}}" />
-          </view>
-      </block> -->
       <block wx:for="{{goodsList}}"  wx:key="{{index}}">
               <template is="goodsList" data="{{...item}}"></template>
       </block>

@@ -1,0 +1,16 @@
+/* Components/cycleView/cycleView.wxss */
+
+.rectangle {
+    height: 403rpx;
+    width: 750rpx;
+}
+
+.square {
+  width: 750rpx;
+  height: 750rpx;
+}
+
+.innerView {
+  width: 100%;
+  height: 100%;
+}

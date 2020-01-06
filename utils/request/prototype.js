@@ -48,7 +48,7 @@ function requestP(options = {}) {
     uid: uid
   };
   domo_custom = JSON.stringify(domo_custom);
-  const header = { 'Content-Type': 'application/x-www-form-urlencoded', 'domo-custom': base64.encode(domo_custom) };
+  const header = { 'Content-Type': 'application/json', 'domo-custom': base64.encode(domo_custom) };
   return new Promise((resolve, reject) => {
     if (showLoading) {
       wx.showLoading({

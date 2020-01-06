@@ -1,10 +1,6 @@
 <import src="../../wxParse/wxParse.wxml" />
-<view class="error" wx:if="{{errMsg}}">
-    <view></view>
-    <text>商品信息错误！该商品已下架</text>
-</view>
 <view class="goTop" bindtap="goTop" wx:if="{{top>800}}"></view>
-<scroll-view class="container" scroll-y="{{isScroll}}" bindscroll="scroll" wx:if="{{!errMsg&&detailsShow}}" scroll-top="{{scrollTop}}">
+<scroll-view class="container" scroll-y="{{isScroll}}" bindscroll="scroll" scroll-top="{{scrollTop}}">
     <view class="bannerBox">
         <view class="share" bindtap="goHome">首 页</view>
         <swiper class="banner" indicator-active-color="#ff5e6b" indicator-color="#FFAFB5" indicator-dots="{{indicatorDots}}" display-multiple-items interval="{{interval}}" duration="{{duration}}">
@@ -15,96 +11,23 @@
             </block>
         </swiper>
     </view>
-    <view class="activity" wx:if="{{details.activityCode}}" bindtap="goActivity">
-        <view class="activityLeft">
-            <view class="activityTag2">{{details.activityTag}}{{details.activityCode.slice(0, 3)}}</view>
-            <view class="activityR">
-                <view class="activityrule" wx:if="{{details.activityRule}}">
-                    {{details.activityRule}}
-                </view>
-                <view class="activityTime" wx:if="{{isXSG}}">
-                    <view>{{globalTimer}}</view>
-                </view>
-            </view>
-            <view class="gogogo">
-                <view></view>
-            </view>
-        </view>
-    </view>
+    
     <view class="goods_detail border_bottom">
-        <view class="goods_name_box">
-            <view class="goods_name">{{details.name}}</view>
-            <view class="useCoupon" wx:if="{{details.allowCoupon==1}}" bindtap="noway">
-                <image src="/image/noway.png" />
-            </view>
-        </view>
         <view class="goods_person_price_box">
-            <view class="goods_person_price f-left" wx:if="{{!isXSGBegin}}">
-                <view class="gpp_group_price_f">{{details.activitypriceDesc}}¥</view>
-                <view class="gpp_group_price_l">{{webNewPrice}}<text wx:if="{{priceScope}}">起</text></view>
-                <view class="gpp_market_price">市场参考价¥{{details.marketPrice}}</view>
-            </view>
-            <view class="goods_person_price f-left" wx:if="{{isXSGBegin}}">
-                <view class="gpp_group_price_f">¥</view>
-                <view class="gpp_group_price_l">{{webNewPrice}}<text wx:if="{{priceScope}}">起</text></view>
-                <view class="gpp_market_price">{{details.activitypriceDesc}}¥<text>{{details.activityPrice}}</text>(未开始)</view>
-            </view>
-            <view class="prop_label f-right" bind:tap="Intergral">
-                <view class="prop_label_icon"></view>
-                <view class="prop_label_text">
-                    <view>{{details.buyIntergral}}</view>
-                    积分
-                </view>
-                <view class="prop_label_qus"></view>
+            <view class="goods_person_price f-left" >
+                <view class="gpp_group_price_f">{{details.goodsPrice}}¥</view>
             </view>
         </view>
-        <view class="goodsTag">
-            <view class="activityLabel" wx:if="{{details.activityCode}}" bindtap="goActivity" data-id="{{details.activityCode}}">{{details.activityTag}}></view>
-            <view class="activityLabelSBox" wx:for="{{details.marketLabelList}}" wx:key="index" wx:for-item="label">
-                <text class="activityLabelS"  bindtap="goLabelActivity" data-id="{{label.id}}">{{label.title}}></text>
-            </view>
+        <view class="goods_name_box">
+            <view class="goods_name">{{details.goodsName}}</view>
         </view>
     </view>
-    <view class="couponList" wx:if="{{details.couponJson.length>0}}">
-        <text>【优惠券】</text>
-        <view class="coupon_l" wx:for="{{details.couponJson}}" wx:for-item="coupon" wx:key="index">
-            {{coupon.coupon_name}}
-            <view class="getCoupon" bindtap="getCoupon" data-id="{{coupon.id}}">领取</view>
-        </view>
+
+    <view class="prop_sku" bindtap="showModal">
+        <view class="prop_sku_text" wx:if="{{true}}">已选：{{12}}</view>
+        <view class="prop_sku_text" wx:if="{{false}}">选择商品属性</view>
     </view>
-    <view class="prop_sku" bindtap="showModal" wx:if="{{details.skuSale.length>1}}">
-        <view class="prop_sku_text" wx:if="{{selectName.length>=1}}">已选：{{selectName}}</view>
-        <view class="prop_sku_text" wx:if="{{selectName.length<1}}">选择商品属性</view>
-    </view>
-    <view class="group_comment" wx:if="{{Evaluate}}">
-        <view class="gc_head" bindtap="allEvaluate">
-            <view class="gc_head_l">Ta们在说({{evaluateCount}})</view>
-            <view class="gc_head_r">查看更多评论</view>
-        </view>
-        <view class="gc_cnt">
-            <view class="comment_list" wx:for="{{Evaluate}}" wx:for-item="eval" wx:key="index">
-                <view class="cl_head">
-                    <image src="{{eval.avatar}}"></image>
-                    <view class="cl_head_name">
-                        <view>{{eval.nickname}}</view>
-                    </view>
-                    <view class="cl_head_star_like">
-                        <view class="comment_star">
-                            <view wx:for="{{eval.star}}" wx:for-item="item" wx:key="index"></view>
-                        </view>
-                    </view>
-                </view>
-                <view class="cl_text">{{eval.content}}</view>
-                <view class="cl_img" wx:if="{{eval.images}}">
-                    <view class="cl_img_s" wx:for="{{eval.images}}" wx:for-item="item" wx:key="index">
-                        <view wx:if="{{item}}" class="list-dImg">
-                            <image bindtap="imgYu" data-list="{{eval.images}}" data-src="{{item}}" src="{{item}}"></image>
-                        </view>
-                    </view>
-                </view>
-            </view>
-        </view>
-    </view>
+    
     <view class="goods_pic_art">
         <view class="goods_pic_art_tab border_bottom">
             <view class="goods_tab" id="detailTab">
@@ -152,31 +75,33 @@
  <!-- <selectSku id="{{id}}"></selectSku> -->
     <view class="sku_detail">
         <view class="sku_img">
-            <view wx:if="{{skuImg}}" class="list-dImg">
-                <image bindtap="imgsku" data-list="{{skuImgList}}" data-src="{{skuImg}}" src="{{skuImg}}"></image>
+            <view  class="list-dImg">
+                <image bindtap="imgsku" data-list="{{skuImg}}" data-src="{{skuImg}}" src="{{skuImg}}"></image>
             </view>
         </view>
-        <view class="sku_name">{{details.name}}</view>
-        <view class="sku_price">￥{{skuPrice}}</view>
+        <view class="sku_name">{{details.goodsName}}</view>
+        <view class="sku_price">￥{{details.goodsPrice}}</view>
         <view class="sku_repertory">
-            <text>库存：{{repertory}}</text>
+            <text>库存：{{details.goodsInventory}}</text>
         </view>
     </view>
     <view class="sku_box">
         <view class="sku_pro" id="panel_sel">
-            <view class="sku_list goods_attr" wx:for="{{details.props}}" wx:key="item" wx:for-item="prop" wx:for-index="group_idx">
-                <view class="sku_title label">{{prop.propName}}</view>
+            <view class="sku_list goods_attr" wx:for="{{goodsSkuList}}" wx:for-item="prop" wx:key="index">
+                <view class="sku_title label">{{prop.skuTypeName}}</view>
                 <view class="sku_check">
-                    <button wx:if="{{prop.propId==propval.propId}}" wx:for="{{propvalues}}" data-prop-name="{{prop.propName}}" 
-                    data-select-index="{{group_idx}}" data-img="{{propval.propValueUrl}}" wx:key="{{index}}" data-attr-index="{{index}}"
-                     data-prop-val-name="{{propval.propValueName}}" wx:for-item="propval" disabled="{{propval._isDisable}}"
-                     class="{{propval.propClass?'sku_active goods_sku':' goods_sku'}}" data-prop="{{propval}}"
-                      data-prop-val-id="{{propval.propValueId}}" data-prop-id="{{propval.propId}}" catchtap="selectProp">
-                        {{propval.propValueName}}
-                    </button>
+                    <block wx:for="{{prop.skuDetailList}}" wx:key="index"> 
+                      <button   data-prop-name="{{prop.skuDetailList[index].skuTypeName}}" 
+                      data-select-index="{{prop.skuDetailList[index].id}}"  wx:key="{{index}}" data-attr-index="{{index}}"
+                      class="{{false?'sku_active goods_sku':' goods_sku'}}" data-prop="{{prop.skuDetailList[index].skuTypeName}}"
+                        data-prop-val-id="{{prop.skuDetailList[index].id}}" data-prop-id="{{prop.skuDetailList[index].skuTypeId}}" catchtap="selectProp">
+                          {{prop.skuDetailList[index].skuDetailName}}
+                      </button>
+                    </block>
                 </view>
             </view>
         </view>
+        
         <view class="sku_qua">
             <view class="sku_qua_box">
                 购买数量

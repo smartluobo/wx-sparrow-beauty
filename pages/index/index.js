@@ -1,3 +1,5 @@
+const req = require('../../utils/request/index.js')
+var app = getApp()
 Page({
   data: {
     background: ['/image/pink.png', '/image/orange.png', '/image/blue.png'],
@@ -9,57 +11,29 @@ Page({
     duration: 500,
     previousMargin: 0,
     nextMargin: 0,
-    goodsList: [{
-        picUrl: '/image/1.jpg',
-        name: '中囯香水',
-        price: 12,
-        subtitle: '這個冬天不怕冷',
-        quantity: 1
-      }, {
-        picUrl: '/image/1.jpg',
-        name: '中囯香水',
-        price: 12,
-        subtitle: '這個冬天不怕冷',
-        quantity: 0
-      }, {
-        picUrl: '/image/1.jpg',
-        name: '中囯香水',
-        price: 12,
-        subtitle: '這個冬天不怕冷',
-        quantity: 0
-      }, {
-        picUrl: '/image/1.jpg',
-        name: '中囯香水',
-        price: 12,
-        subtitle: '這個冬天不怕冷',
-        quantity: 0
-      }, {
-        picUrl: '/image/1.jpg',
-        name: '中囯香水',
-        price: 12,
-        subtitle: '這個冬天不怕冷',
-        quantity: 0
-      }, {
-        picUrl: '/image/1.jpg',
-        name: '中囯香水',
-        price: 12,
-        subtitle: '這個冬天不怕冷',
-        quantity: 12
-      }, {
-        picUrl: '/image/1.jpg',
-        name: '中囯香水',
-        price: 12,
-        subtitle: '這個冬天不怕冷',
-        quantity: 12
-      },{
-        picUrl: '/image/1.jpg',
-        name: '中囯香水',
-        price: 12,
-        subtitle: '這個冬天不怕冷',
-        quantity: 12
-      }]
+    goodsList: []
   },
+  onLoad: function (option) {
+    let that = this;
+    let data = {};
+    req.goods.greateGoodsList(data).then((res) => {
+      console.log("------------")
+      
+      if (res.code == 200) {
+        let List = res.data;
+        for (let i = 0; i < List.length; i++) {
+          
+        }
+        console.log(List)
+        that.setData({
+          goodsList: List
+        });
+      }
+    });
 
+
+    
+  },
   changeIndicatorDots: function (e) {
     this.setData({
       indicatorDots: !this.data.indicatorDots
