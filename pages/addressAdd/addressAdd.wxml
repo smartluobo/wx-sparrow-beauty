@@ -1,0 +1,41 @@
+<!-- index.wxml -->
+
+<view class="adressContainer">
+  <view class="row-cell">
+    <input class="weui-input" bindinput="bindNameInput" auto-focus placeholder="姓名"/>
+  </view>
+
+  <view class="row-cell">
+    <input class="weui-input" maxlength="11" type="number" bindinput="bindPhoneInput" auto-focus placeholder="手机号码"/>
+  </view>
+
+  <view class="row-cell region-cell">
+    <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+      <view class="picker">
+        {{region[0]}} {{region[1]}} {{region[2]}}
+      </view>
+    </picker>
+  </view>
+
+  <view class="textarea-cell">
+     <textarea bindinput="bindAddressInput" auto-height placeholder="详细地址" />
+  </view>
+</view>
+
+<view class="brBgColor"></view>
+
+<view class="adressContainer">
+  <view class="section section_gap" bindtap="checkboxChange">
+    <!-- <checkbox-group bindchange="checkboxChange">
+        <checkbox color="#E64340" class="radio"  value="1" checked="{{checked}}">
+            <text>设为默认地址</text>
+        </checkbox >
+    </checkbox-group> -->
+    <image src="/icon/checked.png" wx:if="{{isDefault}}"></image>
+    <image src="/icon/danxuan-weixuan.png" wx:else></image>
+    <text>设为默认地址</text>
+  </view>
+  <button size="default" bindtap="createAddress"  type='warn'>
+    保存地址
+  </button>
+</view>

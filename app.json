@@ -1,6 +1,10 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/addressList/addressList",
+    "pages/addressAdd/addressAdd",
+    "pages/addressEdit/addressEdit",
+    "pages/login/login",
     "pages/goodsDetails/goodsDetails",
     "pages/shopcart/shopcart",
     "pages/myself/myself",

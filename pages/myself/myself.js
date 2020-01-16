@@ -49,5 +49,10 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
+  },
+  addressList: function(){
+    wx.redirectTo({
+      url: '../addressList/addressList'
+    })
   }
 })

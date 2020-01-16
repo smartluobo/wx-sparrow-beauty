@@ -1,0 +1,50 @@
+.adressContainer{
+  padding: 40rpx;
+}
+ .namePhoneRow{
+   position: relative;
+   padding: 20rpx 40rpx;
+ }
+ .phone{
+  position: absolute;
+  right:40rpx;
+  top:20rpx;
+ }
+ .addres{
+  padding:0rpx 40rpx 20rpx;
+  border-bottom: 2rpx solid #dedede;
+  font-size: 28rpx;
+ }
+ .editRow{
+  position: relative;
+  padding: 20rpx 40rpx;
+ }
+ .editRow image{
+   height: 32rpx;
+   width: 32rpx;
+   vertical-align: baseline;
+   margin-right:10rpx;
+ }
+ .editRow text{
+  font-size: 28rpx;  
+}
+.editRow .edit{
+  position: absolute;
+  right: 180rpx;
+  top: 20rpx;
+}
+.editRow .delete{
+  position: absolute;
+  right: 40rpx;
+  top: 20rpx;
+}
+.brBgColor{
+  background-color: #f0f0f0;
+  height: 20rpx;
+}
+.checkRow image{
+  height: 40rpx;
+  width: 40rpx;
+  vertical-align:sub;
+  margin-right:10rpx;
+}

@@ -7,7 +7,7 @@ const coupon = require('/api/coupon.js');
 const cart = require('/api/cart.js');
 const order = require('/api/order.js');
 const other = require('/api/other.js');
-
+const address = require('/api/address.js');
 
 
 
@@ -18,6 +18,7 @@ req.use(coupon);
 req.use(cart);
 req.use(order);
 req.use(other);
+req.use(address);
 
 
 module.exports = req;

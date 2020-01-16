@@ -3,28 +3,78 @@
   <view style="width:100%;">
     <view class="userinfo">
       <block>
-        <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-        <image  class="point-right" src="/icon/pointright.png"></image>
+        <image src="/image/myBgImg.jpg" class="img-background"/>
+        <view class="userinfoView">
+          <view >
+            <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+          </view>
+          <view class="userinfo-nickname">{{userInfo.nickName}}</view>
+          <!-- <text class="userinfo-nickname">{{userInfo.nickName}}</text> -->
+        </view>
+        <!-- <image  class="point-right" src="/icon/pointright.png"></image> -->
       </block>
     </view>
-    <view class="entry-box">
-      <image class="img-mark" src="/icon/address.png"></image>
+    <view class="order-box">
+      <view >
+        <view>
+          <image  class="order-icon" src="/icon/daifukuan.png"></image>
+        </view>
+        <view>
+          待付款
+        </view>
+      </view>
+      <view >
+        <view>
+          <image  class="order-icon" src="/icon/daifahuo.png"></image>
+        </view>
+        <view>
+          待发货
+        </view>
+      </view>
+      <view >
+        <view>
+          <image  class="order-icon" src="/icon/daishouhuofuben.png"></image>
+        </view>
+        <view>
+          待收货
+        </view>
+      </view>
+      <view >
+        <view>
+          <image  class="order-icon" src="/icon/shouhou.png"></image>
+        </view>
+        <view>
+          售后/退款
+        </view>
+      </view>
+      <view >
+        <view>
+          <image  class="order-icon" src="/icon/order_icon.png"></image>
+        </view>
+        <view>
+          全部订单
+        </view>
+      </view>
+    </view>
+    <view class="brViewBg">
+    </view>
+    <view class="entry-box" bindtap="addressList">
+      <!-- <image class="img-mark" src="/icon/address.png"></image> -->
       <text class="font-desc">收货地址</text>
       <image  class="point-right-desc" src="/icon/pointright.png"></image>
     </view>
     <view class="entry-box">
-      <image class="img-mark" src="/icon/address.png"></image>
+      <!-- <image class="img-mark" src="/icon/address.png"></image> -->
       <text class="font-desc">优惠券</text>
       <image  class="point-right-desc" src="/icon/pointright.png"></image>
     </view>
     <view class="entry-box">
-      <image class="img-mark" src="/icon/address.png"></image>
+      <!-- <image class="img-mark" src="/icon/address.png"></image> -->
       <text class="font-desc">分享给朋友</text>
       <image  class="point-right-desc" src="/icon/pointright.png"></image>
     </view>
     <view class="entry-box">
-      <image class="img-mark" src="/icon/address.png"></image>
+      <!-- <image class="img-mark" src="/icon/address.png"></image> -->
       <text class="font-desc">客户服务</text>
       <image  class="point-right-desc" src="/icon/pointright.png"></image>
     </view>

@@ -1,0 +1,33 @@
+<!-- index.wxml -->
+
+
+
+<view class="addressList" wx:key="{{item.id}}" wx:for="{{addressList}}">
+  <view class="namePhoneRow">
+    <view class="name">{{item.consigneeName}}</view>
+    <view class="phone">{{item.consigneePhone}}</view>
+  </view>
+  <view class="addres">{{item.shippingAddress}}</view>
+  <view class="editRow">
+    <view class="checkRow">
+      <image src="/icon/checked.png" wx:if="{{item.isDefault}}"></image>
+      <image src="/icon/danxuan-weixuan.png" wx:else></image>
+      <text>默认地址</text>
+    </view>
+    <view class="edit" bindtap="addressEdit" data-index="{{index}}">
+      <image src="/icon/bianji.png"></image>
+      <text >编辑</text>
+    </view>
+    <view class="delete" bindtap="addressDelete" data-index="{{index}}">
+      <image src="/icon/icon7.png"></image>
+      <text >删除</text>
+    </view>
+  </view>
+  <view class="brBgColor"></view>
+</view>
+
+<view class="adressContainer">
+  <button size="default" bindtap="addressAdd"  type='warn'>
+    +新增收货地址
+  </button>
+</view>

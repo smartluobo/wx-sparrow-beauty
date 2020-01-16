@@ -1,0 +1,35 @@
+.row-cell{
+  height: 92rpx;
+  border-bottom: 2rpx solid #dedede;
+  margin-bottom: 20rpx;
+}
+.row-cell input{
+  height:92rpx;
+}
+
+.adressContainer{
+  padding: 40rpx;
+}
+ 
+.row-cell.region-cell{
+  padding-top: 20rpx;
+  height: 72rpx;
+}
+
+.textarea-cell{
+  height:150rpx;
+}
+
+.brBgColor{
+  background-color: #f0f0f0;
+  height: 20rpx;
+}
+.section_gap{
+  padding-bottom: 40rpx;
+}
+.adressContainer image{
+  height: 40rpx;
+  width: 40rpx;
+  vertical-align:sub;
+  margin-right:10rpx;
+}

@@ -3,6 +3,19 @@ const { apiUrl } = require('../config.js');
 module.exports = {
   install(req, request) {
     req.user = {
+      //用户登录 通过code获取openid
+      login(data){
+        const url = `${apiUrl}/chaomes/api/user/login`;
+        return request({ url, method: 'POST', data });
+      },
+      //用户上报
+      reportApiUserInfo(data){
+        const url = `${apiUrl}/chaomes/api/user/reportApiUserInfo`;
+        return request({ url, method: 'POST', data });
+      },
+      //--------------------
+
+
       updateLastLogin(data) {
         const url = `${apiUrl}/api/my/updateLastLogin`;
         return request({ url, method: 'POST', data });
